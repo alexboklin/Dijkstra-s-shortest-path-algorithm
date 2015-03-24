@@ -59,9 +59,6 @@ def main(no_path = 1000000):
             if vertex in visited:
                 for pair in destinations[vertex]:
                     scores.append((vertex, pair[0], distances[vertex - 1] + pair[1]))
-            else:
-                for pair in destinations[vertex]:
-                    scores.append((vertex, pair[0], pair[1]))
 
         # Find minimal score and what scores tuple contains it
         min_score, min_index = min((minimum, index) for (index, minimum) in enumerate([score[2] for score in scores]))
